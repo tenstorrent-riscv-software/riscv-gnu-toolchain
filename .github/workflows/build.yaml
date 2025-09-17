@@ -86,7 +86,7 @@ jobs:
             $BUILD_TOOLCHAIN
           fi
           sudo mkdir /mnt/riscv
-          sudo chown runner:runner /mnt/riscv
+          sudo chown $USER:$USER /mnt/riscv
           make -j $(nproc) ${{ matrix.mode }}
 
       - name: tarball build
