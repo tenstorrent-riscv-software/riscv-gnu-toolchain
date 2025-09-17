@@ -9,7 +9,7 @@ on:
       os:
         description: "OS list"
         type: string
-        default: '["ubuntu-24.04"]'
+        default: '["tt-ubuntu-2204-xlarge-stable"]'
       mode:
         description: "Mode list"
         type: string
@@ -183,7 +183,7 @@ jobs:
           make -j $(nproc) build-sim
       - name: make report
         if: |
-          matrix.os == 'ubuntu-24.04'
+          matrix.os == 'tt-ubuntu-2204-xlarge-stable'
           && (matrix.mode == 'linux' || matrix.mode == 'newlib')
           && matrix.compiler == 'gcc'
           && matrix.report == true
