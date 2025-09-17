@@ -174,7 +174,7 @@ jobs:
           fi
           $BUILD_TOOLCHAIN $ARGS
           sudo mkdir /mnt/riscv
-          sudo chown runner:runner /mnt/riscv
+          sudo chown $USER:$USER /mnt/riscv
           make -j $(nproc) ${{ matrix.mode }}
       - name: build simulator
         if: |
