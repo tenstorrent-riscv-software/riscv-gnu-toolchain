@@ -15,16 +15,6 @@
 	path = glibc
 	url = https://github.com/bminor/glibc.git
 	shallow = true
-[submodule "dejagnu"]
-	path = dejagnu
-	url = https://git.savannah.gnu.org/git/dejagnu.git
-	branch = master
-	shallow = true
-[submodule "newlib"]
-	path = newlib
-	url = https://github.com/bminor/newlib.git
-	branch = master
-	shallow = true
 [submodule "gdb"]
 	path = gdb
 	url = https://github.com/bminor/binutils-gdb.git
@@ -34,27 +24,8 @@
 	path = qemu
 	url = https://gitlab.com/qemu-project/qemu.git
 	shallow = true
-[submodule "musl"]
-	path = musl
-	url = https://git.musl-libc.org/git/musl
-	branch = master
-	shallow = true
-[submodule "spike"]
-	path = spike
-	url = https://github.com/riscv-software-src/riscv-isa-sim.git
-	branch = master
-	shallow = true
-[submodule "pk"]
-	path = pk
-	url = https://github.com/riscv-software-src/riscv-pk.git
-	branch = master
-	shallow = true
 [submodule "llvm"]
 	path = llvm
 	url = https://github.com/llvm/llvm-project.git
 	branch = release/20.x
-	shallow = true
-[submodule "uclibc-ng"]
-	path = uclibc-ng
-	url = https://github.com/wbx-github/uclibc-ng.git
 	shallow = true
