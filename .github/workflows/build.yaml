@@ -58,7 +58,7 @@ jobs:
         os:     [tt-ubuntu-2204-xlarge-stable]
         mode:   [linux]
         target: [rv64gc-lp64d]
-        compiler: [gcc, llvm]
+        compiler: [gcc]
         exclude:
           - mode: musl
             compiler: llvm
@@ -79,15 +79,10 @@ jobs:
       - name: build toolchain
         run: |
           TARGET_TUPLE=($(echo ${{ matrix.target }} | tr "-" "\n"))
-          BUILD_TOOLCHAIN="./configure --prefix=/mnt/riscv --with-arch=${TARGET_TUPLE[0]} --with-abi=${TARGET_TUPLE[1]}"
-          if [ "${{ matrix.compiler }}" == "llvm" ]; then # build toolchain with llvm
-            $BUILD_TOOLCHAIN --enable-llvm
-          else
-            $BUILD_TOOLCHAIN
-          fi
+          ./configure --prefix=/mnt/riscv --with-arch=${TARGET_TUPLE[0]} --with-abi=${TARGET_TUPLE[1]} --enable-llvm --enable-linux --with-sim=qemu --enable-qemu-system
           sudo mkdir /mnt/riscv
           sudo chown $USER:$USER /mnt/riscv
-          make -j $(nproc) ${{ matrix.mode }}
+          make -j $(nproc) all build-sim
 
       - name: tarball build
         run: |
