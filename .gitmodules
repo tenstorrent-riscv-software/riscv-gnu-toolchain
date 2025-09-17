@@ -4,12 +4,12 @@
 [submodule "binutils"]
 	path = binutils
 	url = https://github.com/tenstorrent/binutils-gdb-tt.git
-	branch = binutils-2_45-branch
+	branch = master
 	shallow = true
 [submodule "gcc"]
 	path = gcc
 	url = https://github.com/tenstorrent/gcc-tt.git
-	branch = releases/gcc-15
+	branch = tt-master
 	shallow = true
 [submodule "glibc"]
 	path = glibc
