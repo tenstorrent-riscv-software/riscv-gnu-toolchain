@@ -15,6 +15,7 @@ SPIKE_SRCDIR := @with_spike_src@
 PK_SRCDIR := @with_pk_src@
 LLVM_SRCDIR := @with_llvm_src@
 DEJAGNU_SRCDIR := @with_dejagnu_src@
+WHISPER_SRCDIR := @with_whisper_src@
 DEBUG_INFO := @debug_info@
 ENABLE_DEFAULT_PIE := @enable_default_pie@
 INSTALL_TARGET := @install_target@
@@ -160,7 +161,7 @@ $(error "Setting multilib flags for LLVM builds is not supported.")
 endif
 endif
 
-.PHONY: build-binutils build-gdb build-gcc1 build-libc build-gcc2 build-qemu build-llvm
+.PHONY: build-binutils build-gdb build-gcc1 build-libc build-gcc2 build-qemu build-llvm build-whisper
 build-binutils: stamps/build-binutils-@default_target@
 build-gdb: stamps/build-gdb-@default_target@
 build-gcc%: stamps/build-gcc-@default_target@-stage%
@@ -172,6 +173,7 @@ build-libc: stamps/build-newlib stamps/build-newlib-nano \
 endif
 build-qemu: stamps/build-qemu
 build-llvm: stamps/build-llvm-@default_target@
+build-whisper: stamps/build-whisper
 
 REGRESSION_TEST_LIST = gcc
 
@@ -314,6 +316,12 @@ ifeq ($(findstring $(srcdir),$(QEMU_SRCDIR)),$(srcdir))
 QEMU_SRC_GIT := $(QEMU_SRCDIR)/.git
 else
 QEMU_SRC_GIT :=
+endif
+
+ifeq ($(findstring $(srcdir),$(WHISPER_SRCDIR)),$(srcdir))
+WHISPER_SRC_GIT := $(WHISPER_SRCDIR)/.git
+else
+WHISPER_SRC_GIT :=
 endif
 
 ifeq ($(findstring $(srcdir),$(SPIKE_SRCDIR)),$(srcdir))
@@ -1136,6 +1144,13 @@ stamps/build-qemu: $(QEMU_SRCDIR) $(QEMU_SRC_GIT) $(PREPARATION_STAMP)
 		--python=python3
 	$(MAKE) -C $(notdir $@)
 	$(MAKE) -C $(notdir $@) install
+	mkdir -p $(dir $@)
+	date > $@
+
+stamps/build-whisper: $(WHISPER_SRCDIR) $(WHISPER_SRC_GIT) $(PREPARATION_STAMP)
+	$(MAKE) SOFT_FLOAT=1 STATIC_LINK=0 LZ4_COMPRESS=1 -C $(notdir $<)
+	mkdir -p $(INSTALL_DIR)/bin
+	$(MAKE) -C $(notdir $<) install INSTALL_DIR=$(INSTALL_DIR)/bin/
 	mkdir -p $(dir $@)
 	date > $@
 

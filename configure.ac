@@ -299,6 +299,7 @@ AX_ARG_WITH_SRC(spike, spike)
 AX_ARG_WITH_SRC(pk, pk)
 AX_ARG_WITH_SRC(llvm, llvm)
 AX_ARG_WITH_SRC(dejagnu, dejagnu)
+AX_ARG_WITH_SRC(whisper, whisper)
 
 AC_ARG_WITH(linux-headers-src,
 	[AS_HELP_STRING([--with-linux-headers-src],[Set linux-headers source path, use builtin source by default])],

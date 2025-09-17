@@ -618,6 +618,7 @@ LIBOBJS
 qemu_targets
 enable_libsanitizer
 with_linux_headers_src
+with_whisper_src
 with_dejagnu_src
 with_llvm_src
 with_pk_src
@@ -751,6 +752,7 @@ with_spike_src
 with_pk_src
 with_llvm_src
 with_dejagnu_src
+with_whisper_src
 with_linux_headers_src
 enable_libsanitizer
 enable_qemu_system
@@ -1448,6 +1450,8 @@ Optional Packages:
   --with-pk-src           Set pk source path, use builtin source by default
   --with-llvm-src         Set llvm source path, use builtin source by default
   --with-dejagnu-src      Set dejagnu source path, use builtin source by
+                          default
+  --with-whisper-src      Set whisper source path, use builtin source by
                           default
   --with-linux-headers-src
                           Set linux-headers source path, use builtin source by
@@ -4606,6 +4610,29 @@ then :
 else $as_nop
   with_dejagnu_src="\$(srcdir)/dejagnu"
 
+fi
+
+	}
+{
+
+# Check whether --with-whisper-src was given.
+if test ${with_whisper_src+y}
+then :
+  withval=$with_whisper_src;
+else case e in #(
+  e) with_whisper_src=default
+		 ;;
+esac
+fi
+
+	  if test "x$with_whisper_src" != xdefault
+then :
+  with_whisper_src=$with_whisper_src
+
+else case e in #(
+  e) with_whisper_src="\$(srcdir)/whisper"
+ ;;
+esac
 fi
 
 	}
