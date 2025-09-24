@@ -4,10 +4,10 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - master
+      - tt-master
   pull_request:
     branches:
-      - master
+      - tt-master
 
 env:
   submodule_paths: |
