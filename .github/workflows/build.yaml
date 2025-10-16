@@ -55,7 +55,7 @@ jobs:
       smcache_key: ${{ needs.submodule_cache.outputs.key }}
     strategy:
       matrix:
-        os:     [tt-ubuntu-2204-xlarge-stable]
+        os:     [tt-ubuntu-2204-xlarge-stable, tt-ubuntu-2404-large-stable]
         mode:   [linux]
         target: [rv64gc-lp64d]
         compiler: [gcc]
@@ -115,6 +115,8 @@ jobs:
           case "${{ matrix.os }}" in
              "tt-ubuntu-2204-xlarge-stable")
                OS="ubuntu-22.04";;
+             "tt-ubuntu-2404-large-stable")
+               OS="ubuntu-24.04";;
              *)
                OS="${{ matrix.os }}";;
           esac
