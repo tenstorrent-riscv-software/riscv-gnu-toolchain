@@ -55,7 +55,7 @@ jobs:
       smcache_key: ${{ needs.submodule_cache.outputs.key }}
     strategy:
       matrix:
-        os:     [tt-ubuntu-2204-xlarge-stable, tt-ubuntu-2404-large-stable]
+        os:     [tt-ubuntu-2204-xlarge-stable, tt-ubuntu-2404-large-stable, tt-alma-8-large-stable]
         mode:   [linux]
         target: [rv64gc-lp64d]
         compiler: [gcc]
@@ -67,8 +67,13 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: install dependencies
+      - name: install deb dependencies
+        if: matrix.os == 'tt-ubuntu-2204-xlarge-stable' || matrix.os == 'tt-ubuntu-2404-large-stable'
         run: sudo ./.github/setup-apt.sh
+
+      - name: install RPM dependencies
+        if: matrix.os == 'tt-alma-8-large-stable'
+        run: sudo ./.github/setup-dnf.sh
 
       - name: Load submodule cache
         uses: actions/cache/restore@v4
@@ -79,10 +84,15 @@ jobs:
       - name: build toolchain
         run: |
           TARGET_TUPLE=($(echo ${{ matrix.target }} | tr "-" "\n"))
-          ./configure --prefix=/mnt/riscv --with-arch=${TARGET_TUPLE[0]} --with-abi=${TARGET_TUPLE[1]} --enable-llvm --enable-linux --with-sim=qemu --enable-qemu-system
+          if [[ "${{ matrix.os }}" ~= *"ubuntu"* ]]; then LLVM="--enable-llvm" else LLVM=""; fi
+          ./configure --prefix=/mnt/riscv --with-arch=${TARGET_TUPLE[0]} --with-abi=${TARGET_TUPLE[1]} ${LLVM} --enable-linux --with-sim=qemu --enable-qemu-system
           sudo mkdir /mnt/riscv
           sudo chown $USER:$USER /mnt/riscv
-          make -j $(nproc) all build-sim
+          make -j $(nproc) all
+
+      - name: Build Qemu
+        if: matrix.os != 'tt-alma-8-large-stable'
+        run: make -j $(nproc) build-sim
 
       - name: tarball build
         run: |
@@ -117,6 +127,8 @@ jobs:
                OS="ubuntu-22.04";;
              "tt-ubuntu-2404-large-stable")
                OS="ubuntu-24.04";;
+             "tt-alma-8-large-stable")
+               OS="rhel8";;
              *)
                OS="${{ matrix.os }}";;
           esac
