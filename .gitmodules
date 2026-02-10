@@ -1,16 +1,16 @@
 [submodule "binutils"]
 	path = binutils
-	url = https://sourceware.org/git/binutils-gdb.git
+	url = https://github.com/tenstorrent/binutils-gdb-tt.git
 	branch = binutils-2_45-branch
 	shallow = true
 [submodule "gcc"]
 	path = gcc
-	url = https://github.com/gcc-mirror/gcc.git
+	url = https://github.com/tenstorrent/gcc-tt.git
 	branch = releases/gcc-15
 	shallow = true
 [submodule "glibc"]
 	path = glibc
-	url = https://sourceware.org/git/glibc.git
+	url = https://github.com/tenstorrent/glibc-tt.git
 	shallow = true
 [submodule "dejagnu"]
 	path = dejagnu
@@ -29,7 +29,7 @@
 	shallow = true
 [submodule "qemu"]
 	path = qemu
-	url = https://gitlab.com/qemu-project/qemu.git
+	url = https://github.com/tenstorrent/qemu-tt.git
 	shallow = true
 [submodule "musl"]
 	path = musl
@@ -48,7 +48,7 @@
 	shallow = true
 [submodule "llvm"]
 	path = llvm
-	url = https://github.com/llvm/llvm-project.git
+	url = https://github.com/tenstorrent/llvm-project-tt.git
 	branch = release/20.x
 	shallow = true
 [submodule "uclibc-ng"]
