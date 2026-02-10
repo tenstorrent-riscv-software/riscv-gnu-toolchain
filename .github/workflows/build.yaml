@@ -4,10 +4,10 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - tt-master
+      - tt-*
   pull_request:
     branches:
-      - tt-master
+      - tt-*
 
 jobs:
   build:
