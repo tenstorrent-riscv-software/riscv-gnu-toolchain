@@ -3,29 +3,29 @@
 # #1654).
 [submodule "binutils"]
 	path = binutils
-	url = https://github.com/tenstorrent/binutils-gdb-tt.git
+	url = https://github.com/tenstorrent-riscv-software/binutils-gdb.git
 	branch = master
 	shallow = true
 [submodule "gcc"]
 	path = gcc
-	url = https://github.com/tenstorrent/gcc-tt.git
+	url = https://github.com/tenstorrent-riscv-software/gcc.git
 	branch = tt-master
 	shallow = true
 [submodule "glibc"]
 	path = glibc
-	url = https://github.com/tenstorrent/glibc-tt.git
+	url = https://github.com/tenstorrent-riscv-software/glibc.git
 	shallow = true
 [submodule "gdb"]
 	path = gdb
-	url = https://github.com/tenstorrent/binutils-gdb-tt.git
+	url = https://github.com/tenstorrent-riscv-software/binutils-gdb.git
 	branch = gdb-16-branch
 	shallow = true
 [submodule "qemu"]
 	path = qemu
-	url = https://github.com/tenstorrent/qemu-tt.git
+	url = https://github.com/tenstorrent-riscv-software/qemu.git
 	shallow = true
 [submodule "llvm"]
 	path = llvm
-	url = https://github.com/tenstorrent/llvm-project-tt.git
+	url = https://github.com/tenstorrent-riscv-software/llvm-project.git
 	branch = release/20.x
 	shallow = true
