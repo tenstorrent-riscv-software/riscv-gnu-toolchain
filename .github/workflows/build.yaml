@@ -22,7 +22,7 @@ env:
 jobs:
   submodule_cache:
     name: Initialize submodule cache
-    runs-on: tt-ubuntu-2204-xlarge-stable
+    runs-on: ubuntu-24.04
     outputs:
       key: ${{ steps.keygen.outputs.smcache_key }}
     steps:
@@ -55,7 +55,7 @@ jobs:
       smcache_key: ${{ needs.submodule_cache.outputs.key }}
     strategy:
       matrix:
-        os:     [tt-ubuntu-2204-xlarge-stable]
+        os:     [ubuntu-24.04]
         mode:   [linux]
         target: [rv64gc-lp64d]
         compiler: [gcc]
