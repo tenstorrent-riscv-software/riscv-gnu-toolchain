@@ -1,12 +1,136 @@
-UNRESOLVED: gcc.target/riscv/rvv/xtheadvector/vlh-vsh.c
-FAIL: gcc.target/riscv/rvv/xtheadvector/vlbu-vsb.c
-FAIL: gcc.target/riscv/rvv/xtheadvector/vlh-vsh.c
-UNRESOLVED: gcc.target/riscv/rvv/xtheadvector/vlwu-vsw.c
-FAIL: gcc.target/riscv/rvv/xtheadvector/vlhu-vsh.c
-UNRESOLVED: gcc.target/riscv/rvv/xtheadvector/vlw-vsw.c
-UNRESOLVED: gcc.target/riscv/rvv/xtheadvector/vlb-vsb.c
-UNRESOLVED: gcc.target/riscv/rvv/xtheadvector/vlhu-vsh.c
-UNRESOLVED: gcc.target/riscv/rvv/xtheadvector/vlbu-vsb.c
-FAIL: gcc.target/riscv/rvv/xtheadvector/vlwu-vsw.c
-FAIL: gcc.target/riscv/rvv/xtheadvector/vlw-vsw.c
-FAIL: gcc.target/riscv/rvv/xtheadvector/vlb-vsb.c
+FAIL: gcc.dg/diagnostic-cfgs.c diagnostic-cfgs-html.py::test_results - AssertionError: assert
+FAIL: gcc.dg/hierarchical-discriminator-loop-version.c scan-assembler \\.loc 1 (9|10) [0-9]+ is_stmt 0 discriminator [0-9]+
+FAIL: gcc.dg/hierarchical-discriminator-unroll.c scan-assembler \\.loc 1 17 7 is_stmt 0 discriminator ([1-9][0-9]*|0x[1-9a-fA-F][0-9a-fA-F]*)
+FAIL: gcc.dg/pr91441.c  at line 11 (test for warnings, line )
+FAIL: gcc.dg/ipa/pr122458.c (test for excess errors)
+FAIL: gcc.dg/plugin/crash-test-nested-ice.c -fplugin=./crash_test_plugin.so  (test .sarif output for UTF-8-encoded parseable JSON)
+FAIL: gcc.dg/plugin/crash-test-nested-ice.c -fplugin=./crash_test_plugin.so  dg-regexp 13 not found: "during GIMPLE pass: crash_test"
+XPASS: gcc.dg/plugin/crash-test-nested-ice.c -fplugin=./crash_test_plugin.so (internal compiler error)
+FAIL: gcc.dg/plugin/crash-test-nested-ice.c -fplugin=./crash_test_plugin.so (test for excess errors)
+FAIL: gcc.dg/plugin/crash-test-nested-ice.c crash-test-nested-ice-html.py::test_results - xml.etree.ElementTree.ParseError: no element found: line 1, column
+FAIL: gcc.dg/plugin/crash-test-nested-ice.c crash-test-nested-ice-sarif.py::test_execution_failed - json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0
+FAIL: gcc.dg/plugin/crash-test-nested-ice.c crash-test-nested-ice-sarif.py::test_notification - json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0
+FAIL: gcc.dg/plugin/crash-test-nested-write-through-null.c -fplugin=./crash_test_plugin.so  (test .sarif output for UTF-8-encoded parseable JSON)
+FAIL: gcc.dg/plugin/crash-test-nested-write-through-null.c -fplugin=./crash_test_plugin.so  dg-regexp 13 not found: "during GIMPLE pass: crash_test"
+XPASS: gcc.dg/plugin/crash-test-nested-write-through-null.c -fplugin=./crash_test_plugin.so (internal compiler error)
+FAIL: gcc.dg/plugin/crash-test-nested-write-through-null.c -fplugin=./crash_test_plugin.so (test for excess errors)
+FAIL: gcc.dg/plugin/crash-test-nested-write-through-null.c crash-test-nested-write-through-null-html.py::test_results - xml.etree.ElementTree.ParseError: no element found: line 1, column
+FAIL: gcc.dg/plugin/crash-test-nested-write-through-null.c crash-test-nested-write-through-null-sarif.py::test_execution_failed - json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0
+FAIL: gcc.dg/plugin/crash-test-nested-write-through-null.c crash-test-nested-write-through-null-sarif.py::test_notification - json.decoder.JSONDecodeError: Expecting value: line 1 column 1 (char 0
+FAIL: gcc.dg/sarif-output/bad-pragma.c bad-pragma.py::test_messages_have_embedded_urls - assert "unknown opti...s.html)' kind" == "unknown opti...s.html)' kind
+FAIL: gcc.dg/vect/costmodel/riscv/rvv/dynamic-lmul2-7.c scan-assembler e32,m2
+FAIL: gcc.dg/vect/costmodel/riscv/rvv/dynamic-lmul4-10.c scan-assembler e32,m4
+FAIL: gcc.dg/vect/costmodel/riscv/rvv/dynamic-lmul4-10.c scan-assembler-not jr
+FAIL: gcc.dg/vect/costmodel/riscv/rvv/dynamic-lmul4-10.c scan-assembler-times ret 2
+FAIL: gcc.dg/vect/costmodel/riscv/rvv/dynamic-lmul4-10.c scan-tree-dump-times vect "Preferring smaller LMUL loop because it has unexpected spills" 1
+FAIL: gcc.dg/vect/costmodel/riscv/rvv/pr113112-1.c scan-assembler e32,m4
+FAIL: gcc.dg/vect/costmodel/riscv/rvv/pr113112-1.c scan-tree-dump-times vect "Preferring smaller LMUL loop because it has unexpected spills" 1
+XPASS: gcc.dg/vect/costmodel/riscv/rvv/pr113281-1.c scan-assembler-not vset
+XPASS: gcc.dg/vect/costmodel/riscv/rvv/pr113281-2.c scan-assembler-not vset
+FAIL: gcc.dg/vect/costmodel/riscv/rvv/pr113281-3.c scan-assembler-not vset
+FAIL: gcc.dg/vect/costmodel/riscv/rvv/pr113281-4.c scan-assembler-not vset
+FAIL: gcc.dg/vect/costmodel/riscv/rvv/pr114516.c scan-tree-dump-times vect "Preferring smaller LMUL loop because it has unexpected spills" 1
+FAIL: gcc.dg/vect/pr53773.c -flto -ffat-lto-objects  scan-tree-dump-times optimized "\\* 10" 2
+FAIL: gcc.dg/vect/pr53773.c scan-tree-dump-times optimized "\\* 10" 2
+FAIL: gcc.misc-tests/gcov-pr86536.c gcov: 2 failures in line counts, 0 in branch percentages, 0 in condition/decision, 0 in prime-paths, 1 in return percentages, 0 in intermediate format, 0 failed in filters
+FAIL: gcc.misc-tests/gcov-pr86536.c line 19: expected return percentages not found: 200
+FAIL: gcc.misc-tests/gcov-pr86536.c line 21: is 1:should be 2
+FAIL: gcc.misc-tests/gcov-pr86536.c line 22: is 1:should be 2
+UNRESOLVED: gcc.target/riscv/pr122675-1.c   -O2 -flto -fuse-linker-plugin -fno-fat-lto-objects   check-function-bodies test
+FAIL: gcc.target/riscv/rvv/autovec/pr113206-1.c -O3 -ftree-vectorize  scan-assembler-times vsetvli 2
+FAIL: gcc.target/riscv/rvv/autovec/pr113206-2.c -O3 -ftree-vectorize  scan-assembler-times vsetvli 1
+UNRESOLVED: gcc.target/riscv/rvv/autovec/pr120378-2.c -O3 -ftree-vectorize  scan-tree-dump-times optimized ".SAT_TRUNC " 1
+UNRESOLVED: gcc.target/riscv/rvv/autovec/pr120378-2.c -O3 -ftree-vectorize  scan-tree-dump-times optimized "MAX_EXPR " 1
+UNRESOLVED: gcc.target/riscv/rvv/autovec/pr120378-3.c -O3 -ftree-vectorize  scan-tree-dump-times optimized ".SAT_TRUNC " 1
+UNRESOLVED: gcc.target/riscv/rvv/autovec/pr120378-3.c -O3 -ftree-vectorize  scan-tree-dump-times optimized "MAX_EXPR " 1
+UNRESOLVED: gcc.target/riscv/rvv/autovec/pr120378-4.c -O3 -ftree-vectorize  scan-tree-dump-times optimized ".SAT_TRUNC " 1
+UNRESOLVED: gcc.target/riscv/rvv/autovec/pr120378-4.c -O3 -ftree-vectorize  scan-tree-dump-times optimized "MAX_EXPR " 1
+FAIL: gcc.target/riscv/rvv/vsetvl/pr117974.c   -O0   scan-assembler-times beq\\s+[a-x0-9]+,zero,.L12\\s+vsetvli 3
+FAIL: gcc.target/riscv/rvv/vsetvl/pr117974.c   -O1   scan-assembler-times beq\\s+[a-x0-9]+,zero,.L12\\s+vsetvli 3
+FAIL: gcc.target/riscv/rvv/vsetvl/pr117974.c   -O2   scan-assembler-times beq\\s+[a-x0-9]+,zero,.L12\\s+vsetvli 3
+FAIL: gcc.target/riscv/rvv/vsetvl/pr117974.c   -O2 -flto -fno-use-linker-plugin -flto-partition=none   scan-assembler-times beq\\s+[a-x0-9]+,zero,.L12\\s+vsetvli 3
+FAIL: gcc.target/riscv/rvv/vsetvl/pr117974.c   -O2 -flto -fuse-linker-plugin -fno-fat-lto-objects   scan-assembler-times beq\\s+[a-x0-9]+,zero,.L12\\s+vsetvli 3
+FAIL: gcc.target/riscv/rvv/vsetvl/pr117974.c   -O3 -fomit-frame-pointer -funroll-loops -fpeel-loops -ftracer -finline-functions   scan-assembler-times beq\\s+[a-x0-9]+,[a-x0-9]+,.L12\\s+vsetvli 3
+FAIL: gcc.target/riscv/rvv/vsetvl/pr117974.c   -O3 -g   scan-assembler-times beq\\s+[a-x0-9]+,zero,.L12\\s+vsetvli 3
+FAIL: gcc.target/riscv/rvv/vsetvl/pr117974.c   -Os   scan-assembler-times beq\\s+[a-x0-9]+,zero,.L12\\s+vsetvli 3
+FAIL: gfortran.dg/coarray/alloc_comp_1.f90 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
+FAIL: gfortran.dg/coarray/alloc_comp_10.f90 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
+FAIL: gfortran.dg/coarray/alloc_comp_4.f90 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
+FAIL: gfortran.dg/coarray/alloc_comp_5.f90 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
+FAIL: gfortran.dg/coarray/alloc_comp_6.f90 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
+FAIL: gfortran.dg/coarray/alloc_comp_7.f90 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
+FAIL: gfortran.dg/coarray/alloc_comp_8.f90 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
+FAIL: gfortran.dg/coarray/alloc_comp_9.f90 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
+FAIL: gfortran.dg/coarray/allocate_errgmsg.f90 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
+FAIL: gfortran.dg/coarray/associate_1.f90 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
+FAIL: gfortran.dg/coarray/atomic_1.f90 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
+FAIL: gfortran.dg/coarray/atomic_2.f90 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
+FAIL: gfortran.dg/coarray/co_reduce_string.f90 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
+FAIL: gfortran.dg/coarray/coarray_allocated.f90 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
+FAIL: gfortran.dg/coarray/codimension.f90 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
+FAIL: gfortran.dg/coarray/codimension_3.f90 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
+FAIL: gfortran.dg/coarray/coindexed_1.f90 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
+FAIL: gfortran.dg/coarray/coindexed_3.f08 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
+FAIL: gfortran.dg/coarray/coindexed_5.f90 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
+FAIL: gfortran.dg/coarray/collectives_1.f90 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
+FAIL: gfortran.dg/coarray/collectives_2.f90 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
+FAIL: gfortran.dg/coarray/collectives_3.f90 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
+FAIL: gfortran.dg/coarray/collectives_4.f90 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
+FAIL: gfortran.dg/coarray/complex_1.f90 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
+FAIL: gfortran.dg/coarray/cosubscript_1.f90 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
+FAIL: gfortran.dg/coarray/deallocate_sync.f90 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
+FAIL: gfortran.dg/coarray/dummy_1.f90 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
+FAIL: gfortran.dg/coarray/dummy_3.f90 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
+FAIL: gfortran.dg/coarray/event_1.f90 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
+FAIL: gfortran.dg/coarray/event_2.f90 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
+FAIL: gfortran.dg/coarray/event_3.f08 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
+FAIL: gfortran.dg/coarray/event_4.f08 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
+FAIL: gfortran.dg/coarray/fail_image_2.f08 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
+FAIL: gfortran.dg/coarray/failed_images_2.f08 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
+FAIL: gfortran.dg/coarray/form_team_1.f90 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
+FAIL: gfortran.dg/coarray/get_array.f90 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
+FAIL: gfortran.dg/coarray/get_to_indexed_array_1.f90 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
+FAIL: gfortran.dg/coarray/get_to_indirect_array.f90 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
+FAIL: gfortran.dg/coarray/get_with_fn_parameter.f90 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
+FAIL: gfortran.dg/coarray/get_with_scalar_fn.f90 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
+FAIL: gfortran.dg/coarray/image_index_1.f90 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
+FAIL: gfortran.dg/coarray/image_index_2.f90 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
+FAIL: gfortran.dg/coarray/image_index_3.f90 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
+FAIL: gfortran.dg/coarray/image_status_2.f08 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
+FAIL: gfortran.dg/coarray/lib_realloc_1.f90 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
+FAIL: gfortran.dg/coarray/lock_1.f90 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
+FAIL: gfortran.dg/coarray/lock_2.f90 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
+FAIL: gfortran.dg/coarray/lock_3.f90 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
+FAIL: gfortran.dg/coarray/move_alloc_1.f90 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
+FAIL: gfortran.dg/coarray/move_alloc_2.f90 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
+FAIL: gfortran.dg/coarray/poly_run_1.f90 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
+FAIL: gfortran.dg/coarray/poly_run_2.f90 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
+FAIL: gfortran.dg/coarray/poly_run_3.f90 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
+FAIL: gfortran.dg/coarray/pr107441-caf.f90 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
+FAIL: gfortran.dg/coarray/pr81265.f90 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
+FAIL: gfortran.dg/coarray/pr85510.f90 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
+FAIL: gfortran.dg/coarray/pr93671.f90 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
+FAIL: gfortran.dg/coarray/proc_pointer_assign_1.f90 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
+FAIL: gfortran.dg/coarray/ptr_comp_1.f08 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
+FAIL: gfortran.dg/coarray/ptr_comp_2.f08 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
+FAIL: gfortran.dg/coarray/ptr_comp_3.f08 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
+FAIL: gfortran.dg/coarray/ptr_comp_4.f08 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
+FAIL: gfortran.dg/coarray/ptr_comp_6.f08 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
+FAIL: gfortran.dg/coarray/registering_1.f90 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
+FAIL: gfortran.dg/coarray/scalar_alloc_1.f90 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
+FAIL: gfortran.dg/coarray/scalar_alloc_2.f90 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
+FAIL: gfortran.dg/coarray/select_type_1.f90 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
+FAIL: gfortran.dg/coarray/select_type_3.f90 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
+FAIL: gfortran.dg/coarray/send_array.f90 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
+FAIL: gfortran.dg/coarray/send_char_array_1.f90 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
+FAIL: gfortran.dg/coarray/sendget_array.f90 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
+FAIL: gfortran.dg/coarray/sizeof_1.f90 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
+FAIL: gfortran.dg/coarray/stopped_images_2.f08 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
+FAIL: gfortran.dg/coarray/submodule_1.f90 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
+FAIL: gfortran.dg/coarray/subobject_1.f90 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
+FAIL: gfortran.dg/coarray/substring_1.f90 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
+FAIL: gfortran.dg/coarray/sync_1.f90 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
+FAIL: gfortran.dg/coarray/sync_3.f90 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt output pattern test
+FAIL: gfortran.dg/coarray/sync_team.f90 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
+FAIL: gfortran.dg/coarray/this_image_1.f90 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
+FAIL: gfortran.dg/coarray/this_image_2.f90 -fcoarray=lib -pthread  -O2  -lcaf_shmem -lrt execution test
