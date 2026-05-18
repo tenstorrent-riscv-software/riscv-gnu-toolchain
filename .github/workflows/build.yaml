@@ -26,7 +26,7 @@ jobs:
     outputs:
       key: ${{ steps.keygen.outputs.smcache_key }}
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Generate submodule cache key
         id: keygen
@@ -34,7 +34,7 @@ jobs:
 
       - name: Setup submodule cache
         id: smcache
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: ${{ env.submodule_paths }}
           key: ${{ steps.keygen.outputs.smcache_key }}
@@ -65,13 +65,13 @@ jobs:
           - mode: uclibc
             compiler: llvm
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: install dependencies
         run: sudo ./.github/setup-apt.sh
 
       - name: Load submodule cache
-        uses: actions/cache/restore@v4
+        uses: actions/cache/restore@v5
         with:
           path: ${{ env.submodule_paths }}
           key: ${{ env.smcache_key }}
@@ -120,7 +120,7 @@ jobs:
           esac
           echo "TOOLCHAIN_NAME=riscv$BITS-$MODE-$OS-${{ matrix.compiler }}-nightly" >> $GITHUB_OUTPUT
 
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: ${{ steps.toolchain-name-generator.outputs.TOOLCHAIN_NAME }}
           path: riscv.tar.xz
