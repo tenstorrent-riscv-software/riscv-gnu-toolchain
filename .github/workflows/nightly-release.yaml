@@ -79,6 +79,7 @@ jobs:
           fi
           sudo mkdir /mnt/riscv
           sudo chown runner:runner /mnt/riscv
+          touch gcc/gcc/testsuite/gcc.dg/cpp/_Pragma3.c
           make -j $(nproc) ${{ matrix.mode }}
 
       - name: tarball build
