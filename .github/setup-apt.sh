@@ -7,4 +7,4 @@ apt install -y autoconf automake autotools-dev curl python3 python3-pip \
             build-essential bison flex texinfo gperf libtool patchutils bc \
             zlib1g-dev libexpat-dev git ninja-build cmake ccache libglib2.0-dev \
             expect device-tree-compiler python3-pyelftools libslirp-dev \
-            libzstd-dev libncurses-dev
+            libzstd-dev libncurses-dev dejagnu
