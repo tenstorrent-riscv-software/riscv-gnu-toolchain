@@ -162,7 +162,7 @@ jobs:
       - name: Prepare ccache directory
         run: |
           sudo mkdir -p "${CCACHE_DIR}"
-          sudo chown runner:runner "${CCACHE_DIR}"
+          sudo chown $USER:$USER "${CCACHE_DIR}"
 
       - name: Restore ccache
         id: ccache-restore
@@ -207,7 +207,7 @@ jobs:
           fi
           $BUILD_TOOLCHAIN $ARGS
           sudo mkdir /mnt/riscv
-          sudo chown runner:runner /mnt/riscv
+          sudo chown $USER:$USER /mnt/riscv
           make -j $(nproc) ${{ matrix.mode }}
       - name: build simulator
         if: |
