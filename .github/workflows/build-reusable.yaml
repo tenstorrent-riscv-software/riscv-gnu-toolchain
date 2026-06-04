@@ -9,15 +9,15 @@ on:
       os:
         description: "OS list"
         type: string
-        default: '["ubuntu-22.04","ubuntu-24.04"]'
+        default: '["ubuntu-24.04"]'
       mode:
         description: "Mode list"
         type: string
-        default: '["newlib","linux","musl","uclibc"]'
+        default: '["linux"]'
       target:
         description: "Target list"
         type: string
-        default: '["rv32gc-ilp32d","rv64gc-lp64d"]'
+        default: '["rv64gc-lp64d"]'
       compiler:
         description: "Compiler list"
         type: string
@@ -50,17 +50,11 @@ on:
 env:
   submodule_paths: |
     binutils
-    dejagnu
     gcc
     gdb
     glibc
     llvm
-    musl
-    newlib
-    pk
     qemu
-    spike
-    uclibc-ng
     .git/modules
 
 jobs:
