@@ -4,10 +4,10 @@ on:
   workflow_dispatch:
   push:
     branches:
-      - master
+      - tt-master
   pull_request:
     branches:
-      - master
+      - tt-master
 
 jobs:
   # The GNU and LLVM builds run as separate jobs. An --enable-llvm build builds
