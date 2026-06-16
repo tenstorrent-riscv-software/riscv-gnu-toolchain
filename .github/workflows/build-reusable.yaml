@@ -59,7 +59,7 @@ env:
 
 jobs:
   report:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04-16core
     steps:
       - name: Report inputs
         run: |
@@ -76,7 +76,7 @@ jobs:
 
   validate_inputs:
     name: Validate inputs
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04-16core
     steps:
       - name: Check strip input
         run: |
@@ -88,7 +88,7 @@ jobs:
   submodule_cache:
     name: Initialize submodule cache
     needs: [validate_inputs]
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04-16core
     outputs:
       key: ${{ steps.keygen.outputs.smcache_key }}
     steps:
@@ -120,7 +120,7 @@ jobs:
           git submodule foreach 'git maintenance run'
 
   build:
-    runs-on: ${{ matrix.os }}
+    runs-on: ubuntu-24.04-16core
     needs: [submodule_cache,validate_inputs]
     env:
       CCACHE_BASEDIR: ${{ github.workspace }}
