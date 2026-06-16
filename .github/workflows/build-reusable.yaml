@@ -221,7 +221,12 @@ jobs:
           && matrix.compiler == 'gcc'
           && matrix.report == true
         run: |
-          make report-${{ matrix.mode }} -j $(nproc)
+          # Restrict the GCC testsuite to RISC-V-specific .exp files.
+          # The full cross-target suite under QEMU takes 3+ hours and
+          # exceeds CI runner limits. Discover .exp files dynamically so
+          # new ones get picked up automatically.
+          RISCV_EXPS=$(find gcc/gcc/testsuite/gcc.target/riscv -name '*.exp' -printf '%f\n' | tr '\n' ' ')
+          make report-${{ matrix.mode }} -j $(nproc) RUNTESTFLAGS="$RISCV_EXPS"
 
       - name: Show ccache statistics
         if: always()
