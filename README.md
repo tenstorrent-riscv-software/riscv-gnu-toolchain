@@ -4,6 +4,9 @@ Tenstorrent RISC-V Compiler Toolchain
 This is the GCC and Clang compiler maintained by Tenstorrent
 for RISC-V CPUs.
 
+It is a downstream fork of
+https://github.com/riscv-collab/riscv-gnu-toolchain
+
 It contains work in progress that will make it's way upstream
 to the respective projects, and produces builds of the toolchain
 for general use.
